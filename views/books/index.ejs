@@ -14,15 +14,15 @@
     <% books.forEach(book => { %>
       <li>
         <form 
-          action="/books/<%= todo._id %>?_method=DELETE"
+          action="/books/<%= book._id %>?_method=DELETE"
           class="delete-form"
           method="POST"
         >
           <button type="submit">X</button>
         </form>
-				<a href="/books/<%= todo._id %>"><%= todo.text %></a> 
+				<a href="/books/<%= book._id %>"><%= book.text %></a> 
 				- 
-				<%= todo.done ? 'done' : 'not done' %>
+				<%= book.done ? 'done' : 'not done' %>
 			</li>
     <% }) %>
   </ul>

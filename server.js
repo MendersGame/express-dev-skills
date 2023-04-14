@@ -20,9 +20,9 @@ app.use(function(req, res, next) {
 
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: flase }))
+app.use(express.urlencoded({ extended: false }))
 app.use(
-  express.statis(
+  express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
