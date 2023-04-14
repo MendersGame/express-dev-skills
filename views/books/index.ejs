@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book List</title>
+  <script defer src="/js/books.js"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1>Books as of <%= time %></h1>
+  <ul>
+    <% books.forEach(book => { %>
+      <li>
+        <form 
+          action="/books/<%= todo._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
+				<a href="/books/<%= todo._id %>"><%= todo.text %></a> 
+				- 
+				<%= todo.done ? 'done' : 'not done' %>
+			</li>
+    <% }) %>
+  </ul>
+  <a href="/books/new">Add a Book</a>
+</body>
+</html>
